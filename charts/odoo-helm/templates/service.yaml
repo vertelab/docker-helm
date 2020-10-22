@@ -1,0 +1,20 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ include "odoo-helm.fullname" . }}
+  labels:
+     chart: "{{ .Chart.Name }}-{{ .Chart.Version | replace "+" "_" }}"
+
+spec:
+  type: {{ .Values.service.type }}
+  ports:
+    - port: {{ .Values.service.port }}
+      targetPort: http
+      protocol: TCP
+      name: http
+    - port: 8071
+      targetPort: http
+      protocol: TCP
+      name: port-2
+  selector:
+    {{- include "odoo-helm.selectorLabels" . | nindent 4 }}
