@@ -24,15 +24,3 @@ spec:
         ports:
         - containerPort: 5432
           name: postgredb
-        volumeMounts:
-        - name: postgredb
-          mountPath: /var/lib/postgresql
-          subPath: postgres
-  volumeClaimTemplates:
-  - metadata:
-      name: postgredb
-    spec:
-      accessModes: ["ReadWriteOnce"]
-      resources:
-        requests:
-          storage: 2Gi
