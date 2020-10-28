@@ -6,5 +6,5 @@ metadata:
     app: postgres
 data:
   POSTGRES_DB: testdb
-  POSTGRES_USER: afcrm
-  POSTGRES_PASSWORD: afcrmpwd
+  POSTGRES_USER: odoo
+  POSTGRES_PASSWORD: odoo
