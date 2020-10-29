@@ -34,15 +34,15 @@ spec:
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag | default .Chart.AppVersion }}"
           imagePullPolicy: {{ .Values.image.pullPolicy }}
           env:
-          - name: DB_ENV_POSTGRES_HOST
+          - name: HOST
             value: postgres
-          - name: DB_ENV_POSTGRES_PORT
+          - name: PORT
             value: "5432"
-          - name: DB_ENV_POSTGRES_USER
+          - name: USER
             value: odoo
-          - name: DB_ENV_POSTGRES_PASSWORD
+          - name: PASSWORD
             value: odoo
-          - name: DB_ENV_POSTGRES_DBNAME
+          - name: DBNAME
             value: testdb 
           ports:
             - name: http
